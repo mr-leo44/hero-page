@@ -1,8 +1,11 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   font-size: 16px;
   box-sizing: border-box;
+  font-family: "Montserrat", "Ralleway", "Roboto", sans-serif;
 }
 
 ul {
@@ -42,9 +45,9 @@ a {
 }
 
 .logo {
-  color: #ff7200;
+  color: #222;
   font-size: 2rem;
-  font-family: arial;
+  font-weight: 700;
   padding: 1.5rem 0;
 }
 
@@ -58,14 +61,30 @@ a {
 
 .menu a {
   color: #fff;
-  font-family: Arial;
   font-weight: bold;
   text-transform: uppercase;
   transition: 0.4s ease-in-out;
 }
 
+.menu a::after {
+  content: "";
+  background: #000;
+  display: block;
+  position: relative;
+  top: 1px;
+  width: 0;
+  height: 2px;
+  transition: 0.6s ease-in-out;
+}
+
+.menu a.active::after,
+.menu a:hover::after {
+  width: 100%;
+}
+
+.menu a.active,
 .menu a:hover {
-  color: #ff7200;
+  color: #222;
 }
 
 .search {
@@ -74,11 +93,10 @@ a {
   align-items: center;
   width: 18rem;
   padding: 1.5rem 0;
-  font-family: "Times new Roman";
 }
 
 .search input {
-  background: transparent;
+  background: #fff;
   border: 1px solid #ff7200;
   padding: 0.75rem 0.5rem;
   color: #fff;
@@ -88,7 +106,7 @@ a {
 }
 
 .search input::placeholder {
-  color: #fff;
+  color: #222;
   opacity: 1;
 }
 
@@ -119,7 +137,7 @@ a {
   height: 85vh;
   width: 100%;
   margin: 0 auto 0 auto;
-  color: #fff;
+  color: #222;
   gap: 3rem;
 }
 
@@ -136,23 +154,22 @@ a {
 .left h2,
 .h2 {
   font-size: 2.5rem;
-  color: #fff;
+  color: #222;
 }
 
 .left .par {
-  font-family: Arial;
   letter-spacing: 1.2px;
   line-height: 30px;
 }
 
 .left-btn {
-  margin: 1rem 0;
+  margin: 1.25rem 0;
 }
 
 .left .cta {
-  padding: 0.75rem 0.5rem;
-  background: #ff7200;
-  border: 1px #ff7200;
+  padding: 0.75rem 1rem;
+  background: #222;
+  border: 1px #222;
   color: #fff;
   font-weight: 500;
   border-radius: 5px;
@@ -187,16 +204,15 @@ a {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: rgba(0, 0, 0.8);
+  background: rgba(34, 34, 34, .9);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   padding: 1rem 1.5rem;
 }
 
 .form h2 {
-  font-family: sans-serif;
   text-align: center;
-  color: #ff7200;
+  color: #222;
   font-size: 1.2rem;
   background-color: #fff;
   border-radius: 10px;
@@ -214,7 +230,6 @@ a {
   color: #fff;
   font-size: 1rem;
   letter-spacing: 1px;
-  font-family: sans-serif;
   transition: ease-in-out 0.5s;
 }
 
@@ -224,7 +239,6 @@ a {
 
 .form input::placeholder {
   color: #ff7200;
-  font-family: Arial;
 }
 
 .form input:focus {
@@ -253,10 +267,10 @@ a {
 }
 
 .form .link {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   margin: 1rem auto;
   text-align: center;
+  color: #fff;
 }
 
 .form .sign-in > a {
@@ -266,6 +280,7 @@ a {
 .copyright {
   margin-top: 2rem;
   text-align: center;
-  opacity: .75;
+  opacity: 0.75;
   font-size: 1rem;
+  color: #fff;
 }
